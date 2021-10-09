@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>HIQPIX</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Roboto:wght@300;400;600&display=swap"
     rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -107,15 +108,35 @@
             text-decoration: none;
             color: black;
             background: white;
-            border-radius: 10px;
+            border-radius: 5px;
             padding: 13px 36px;
             display: inline-block;
             border: 2px solid white;
+            transition: all 0.3s linear;
+        }
+        .btn .btn-hover-icon{
+            display: none;
+        }
+        .btn:hover{
+            color: #fff;
+            background: #004eab;
+            border-color: #004eab;
+        }
+        .btn:hover .btn-hover-icon{
+            display: inline-block;
+        }
+        .btn:hover .btn-icon{
+            display: none;
         }
 
         .btn.btn-outline {
             background: transparent;
             color: white;
+        }
+        .btn.btn-outline:hover{
+            background: white;
+            color: #000;
+            border-color: white;
         }
 
         .hx-vt-360 {
@@ -158,6 +179,7 @@
 
         .hx-header .hiqpix-logo {
             width: 135px;
+            vertical-align: middle;
         }
 
         .hx-header .lhs-slot, .hx-header .rhs-slot {
@@ -168,12 +190,14 @@
         .hx-header nav a {
             color: black;
             text-decoration: none;
-            padding: 10px;
+            padding: 10px 20px;
             margin: 3px;
             font-size: 18px;
         }
         .hx-header nav a.active{
             color: #004eab;
+            border-radius: 20px;
+            background: #c7e1ff;
         }
 
         /*header styles*/
@@ -183,8 +207,9 @@
             background-repeat: no-repeat;
             background-size: cover;
             background-position: top center;
-            min-height: 617px;
+            min-height: 532px;
             display: none;
+            margin-top: 85px;
         }
         .hx-banner-sec.active{
             display: block;
@@ -199,7 +224,7 @@
             background-image: url('images/home-banner-video.png');
         }
         .hx-banner-content {
-            padding-top: 189px;
+            padding-top: 104px;
             padding-left: 101px;
         }
 
@@ -302,7 +327,7 @@
             font-size: 48px;
             color: #162847;
             margin-bottom: 7px;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .hx-card-sec p {
@@ -395,6 +420,11 @@
         .hx-card-sec .btn.btn-outline {
             color: #000;
             border-color: #000;
+            transition: all 0.3s linear;
+        }
+        .hx-card-sec .btn.btn-outline:hover{
+            color: #fff;
+            background-color: #000;
         }
 
         /*card sec*/
@@ -488,7 +518,7 @@
 
         .hx-who-sec .hx-who-count {
             margin-top: 31px;
-            border-top: 1px solid #1e306e;
+            border-top: 1px solid #162847;
             padding-top: 10px;
             display: flex;
             align-items: flex-start;
@@ -497,14 +527,14 @@
 
         .hx-who-sec .hx-who-count h4 {
             font-size: 51px;
-            color: #1e306e;
+            color: #162847;
             font-weight: 300;
             margin-bottom: 3px;
 
         }
 
         .hx-who-sec .hx-who-count p {
-            color: #1e306e;
+            color: #162847;
             line-height: 20px;
         }
 
@@ -687,6 +717,7 @@
             border-radius: 5px;
             width: 100%;
             padding: 10px;
+            resize: vertical;
         }
 
         .hx-form button {
@@ -888,6 +919,9 @@
             .hx-header{
                 padding: 0 15px;
             }
+            .hx-header nav a{
+                padding: 10px 15px;
+            }
             .hx-banner-content{
                 padding-left: 20px;
                 padding-right: 20px;
@@ -934,8 +968,11 @@
             .hx-header, header{
                 height: 70px;
             }
+            .hx-banner-sec{
+                margin-top: 70px;
+            }
             .hx-slide-txt h3{
-                font-style: 25px;
+                font-size: 30px;
             }
             .hx-slider-sec .hx-container{
                 padding-left: 0;
@@ -1025,14 +1062,16 @@
                 width: 100%;
                 position: absolute;
                 left: 0;
-                top: 85px;
+                top: 70px;
                 background: white;
                 padding: 10px;
                 display: none;
+                box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
             }
             .hx-header nav a{
                 display: block;
                 width: 100%;
+                margin: 5px 0;
             }
             .hamburger{
                 display: inline-flex;
@@ -1124,8 +1163,8 @@
             </div>
             <div class="rhs-slot">
                 <nav id="mainNav">
-                    <a data-view="hx-who-sec" href="#hx-who-sec">About</a>
                     <a data-view="hx-card-sec" href="#hx-card-sec">Services</a>
+                    <a data-view="hx-who-sec" href="#hx-who-sec">About</a>
                     <a data-view="hx-get-intouch" href="#hx-get-intouch">Contact</a>
                     <a href="http://hiqpix.com/GalleryServices.aspx">Our works<img class="hx-arrow" src="images/icon-arrow.svg" alt="arrow"></a>
                 </nav>
@@ -1295,7 +1334,7 @@
                 </li>
             </ul>
             <div class="hx-btn-group">
-                <a href="http://hiqpix.com/GalleryServices.aspx" class="btn btn-outline">Our works<img class="hx-arrow" src="images/icon-arrow.svg" alt="arrow"></a>
+                <a href="http://hiqpix.com/GalleryServices.aspx" class="btn btn-outline">Our works<img class="hx-arrow btn-icon" src="images/icon-arrow.svg" alt="arrow"><img class="hx-arrow btn-hover-icon" src="images/icon-arrow-wht.svg" alt="arrow"></a>
             </div>
         </div>
     </section>
@@ -1511,7 +1550,7 @@ integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="ano
         $('.hx-recent-works .hx-items').slick({
             infinite: true,
             slidesToShow: 4,
-            slidesToScroll: 2,
+            slidesToScroll: 1,
             dots: false,
             arrows: false,
             autoplay: true,
@@ -1533,7 +1572,6 @@ integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="ano
                 breakpoint: 599,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1,
                 }
             }
             ]
@@ -1542,9 +1580,9 @@ integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="ano
             entries.forEach(entry => {
               const id = entry.target.getAttribute('id');
               if (entry.intersectionRatio > 0) {
-                document.querySelector(`nav a[href="#${id}"]`).classList.add('active');
+                document.querySelector(`nav a[href="#${id}"]`)?.classList.add('active');
             } else {
-                document.querySelector(`nav a[href="#${id}"]`).classList.remove('active');
+                document.querySelector(`nav a[href="#${id}"]`)?.classList.remove('active');
             }
         });
         });
